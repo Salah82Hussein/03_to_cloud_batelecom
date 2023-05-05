@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>B-TELECOM COMPANY: EXPRESS RECHARGE APPLICATION (SERVER-SIDE)</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+<link rel="stylesheet" href="/static/my_css/w3.css">
+<link rel="stylesheet" href="/static/my_css/w3-theme-black.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<style>
+
+table, th, td {
+  border: 1px solid black;
+}
+
+
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+
+<h4>
+&nbsp;&nbsp;&nbsp;
+    <a href="/b_tel_express/manage_accounts_list/" class="w3-bar-item w3-button w3-hide-small w3-hover-white">إدارة حــســابــات الــمــســتــخــدمــيــن</a>
+&nbsp;&nbsp;&nbsp;
+
+    <a href="/b_tel_express/sabafon_list/" class="w3-bar-item w3-button w3-hide-small w3-hover-white">ســبــاء فــــون</a>
+&nbsp;&nbsp;&nbsp;
+
+    <a href="/accounts/logout/" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white"> {{ user }} تـسـجـيـل الـخـروج</a>
+</h4>
+
+<!-- comment (salah) : multi line comment EXAMBLE : -->
+
+<!-- &nbsp;&nbsp;&nbsp; means add spaces 
+1 SALAH
+2 SALAH
+3 the line bellow to add 3 spaces and not break into a new line.
+ -->
+
+<h4>
+    <p>  </p>
+&nbsp;&nbsp;&nbsp;
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">يمن موبايل</a>
+
+&nbsp;&nbsp;&nbsp;
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">عــدن نــت</a>
+
+&nbsp;&nbsp;&nbsp;
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">واي</a>
+
+&nbsp;&nbsp;&nbsp;
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">يــو</a>
+
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">حــول الــنــظــام</a>
+&nbsp;&nbsp;&nbsp;
+
+</h4>
+
+</div>
+</div>
+
+
+<!-- comment (salah) : line break br <br>  </br> -->
+
+
+
+<!-- Sidebar -->
+
+
+<!-- comment (salah) : multi line comment bellow : -->
+<!-- 
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+    <i class="fa fa-remove"></i>
+  </a>
+  <h4 class="w3-bar-item"><b>Menu</b></h4>
+    <a href="/b_tel_express/manage_users/" class="w3-bar-item w3-button w3-hide-small w3-hover-white">إدارة حــســابــات الــمــســتــخــدمــيــن</a>
+    <a href="/b_tel_express/manage_users/" class="w3-bar-item w3-button w3-hover-black">إدارة حــســابــات الــمــســتــخــدمــيــن</a>
+
+  <a class="w3-bar-item w3-button w3-hover-black" href="#">Link</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#">Link</a>
+</nav>
+ -->
+
+
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main" style="margin-left:250px">
+
+
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+
+	{% block content_b1 %}{% endblock content_b1 %}
+
+    </div>
+  </div>
+
+  {% block content_b2 %}{% endblock content_b2 %}
+
+  <div class="w3-row">
+    <div class="w3-twothird w3-container">
+	
+	{% block content_b3 %}{% endblock content_b3 %}
+
+    </div>
+  </div>
+
+
+  {% block content_b4 %}{% endblock content_b4 %}
+  {% block content_b5 %}{% endblock content_b5 %}
+
+  <div class="w3-row">
+    <div class="w3-twothird w3-container">
+	
+	{% block content_b6 %}{% endblock content_b6 %}
+
+    </div>
+  </div>
+
+
+
+<!-- END MAIN -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+</script>
+
+
+
+</body>
+</html>

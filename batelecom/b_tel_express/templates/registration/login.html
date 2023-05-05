@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<title>B-TELECOM COMPANY: EXPRESS RECHARGE APPLICATION (SERVER-SIDE)</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/static/my_css/w3.css">
+
+<body>
+    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+
+        {% block content_all %}
+         {% block content_2 %}
+
+           {% if form.errors %}
+                <p><b>Your username and password didn't match. Please try again.</b></p>
+           {% endif %}
+
+           {% if next %}
+             {% if user.is_authenticated %}
+                <p><b>Your account doesn't have access to this page. To proceed,
+                please login with an account that has access.</b></p>
+             {% else %}
+                <p><b>Please Login :</b></p>
+             {% endif %}
+           {% endif %}
+         {% endblock %}
+
+         {% block content_3 %}
+           <form class="w3-container" method="post" action="{% url 'login' %}">
+	        <div class="w3-section">
+			{% csrf_token %}
+
+<p>
+			<label><b> {{ form.username.label_tag }} </b></label>
+</p>
+<p>
+			<text><b> {{ form.username }} </b></text>
+</p>
+<p>
+			<label><b> {{ form.password.label_tag }} </b></label>
+</p>
+<p>
+			<text><b> {{ form.password }} </b></text>
+
+</p>
+			<button class="w3-button w3-block w3-green w3-section w3-padding" type="submit">Login</button>
+	                <input type="hidden" name="next" value="/b_tel_express/">
+
+		</div>
+           </form>
+
+
+         {% endblock %}
+        {% endblock %}
+
+    </div>
+            
+</body>
+</html>

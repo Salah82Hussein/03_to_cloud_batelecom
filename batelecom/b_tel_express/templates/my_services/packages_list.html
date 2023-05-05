@@ -1,0 +1,58 @@
+    <a href="/b_tel_express/" class="w3-bar-item w3-button w3-hide-small w3-hover-white"> الــصــفــحـــة الــرئــيــســيـــــة </a>
+    <p>  </p>
+
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>          
+
+<title>B-TELECOM COMPANY: EXPRESS RECHARGE APPLICATION (SERVER-SIDE)</title>
+    </head>
+
+    <body>
+
+<form method="get">
+{% csrf_token %}
+
+        <div class="container-fluid p-2 bg-primary text-white text-center">
+            <h2>قــائــمــــة بــاقـــات ســبــاء فــــون</h2>
+        </div>        
+
+	<div class="container mt-5">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>إســم الــبــاقــة</th>
+                        <th>الــســعــر</th>
+                        <th>الــكـــــود</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                   {% for my_list in my_packages_list.plans %}                    
+		     <tr>
+
+                        <td>
+	                        <a href="/b_tel_express/package_info/{{ my_list.code }}/">{{ my_list.name }}</a>
+			</td>
+
+                        <td>{{ my_list.price }}</td>
+                        <td>{{ my_list.code }}</td>
+
+
+                     </tr>                    
+		   {% endfor %}    
+                
+                </tbody>
+            </table>
+       </div>
+
+
+</form>
+
+    </body>
+</html>

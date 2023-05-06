@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "batelecom"
+version = "0.1.0"
+description = "salah test 1"
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+dj-database-url = "^0.5.0"
+psycopg2-binary = "^2.9.1"
+
+whitenoise = "^6.4.0"
+gunicorn = "^20.1.0"
+
+[tool.poetry.group.dev.dependencies]
+django = "3.0.14"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

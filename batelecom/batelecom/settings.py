@@ -30,7 +30,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
 DEBUG = 'RENDER' not in os.environ
 
 ALLOWED_HOSTS = []
-RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+#@dpg-chaparrhp8u0165adn7g-a.oregon-postgres.render.com:5432
+#RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('@dpg-chaparrhp8u0165adn7g-a.oregon-postgres.render.com:5432')
 if RENDER_EXTERNAL_HOSTNAME:
     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
@@ -105,54 +108,18 @@ DATABASES = {
     'default': dj_database_url.config(        
         # Feel free to alter this value to suit your needs.        
         #default='postgresql://postgres:postgres@localhost:5432/batelecom', 
-        default='postgresql://postgres:postgres@localhost:53267/batelecom', 
+        #default='postgresql://postgres:postgres@localhost:53267/batelecom', 
+        
+        default='postgres://batelecom:XhXLjvJV44VD7DWQcOjmc9b0DdvBunaX@dpg-chaparrhp8u0165adn7g-a.oregon-postgres.render.com:5432/batelecom', 
+        
+        #postgres://batelecom:XhXLjvJV44VD7DWQcOjmc9b0DdvBunaX@dpg-chaparrhp8u0165adn7g-a/batelecom
+
+        #postgres://USER:PASSWORD@EXTERNAL_HOST:PORT/DATABASE
+        #postgres://batelecom:XhXLjvJV44VD7DWQcOjmc9b0DdvBunaX@dpg-chaparrhp8u0165adn7g-a.oregon-postgres.render.com/batelecom
+
+        
         conn_max_age=600    )}
         
-
-
-'''
-DATABASES = {
-    "default": {
-#sql_server.pyodbc
-
-        'ENGINE': 'sql_server.pyodbc',
-        #'ENGINE': 'mssql',
-
-        
-
-        #'NAME': BASE_DIR / 'db.sqlite3',
-        'NAME': 'btel_db_1',
-        
-        'USER': 'sa',
-        'PASSWORD': 'sa7323779933ahSQL',
-
-        #'HOST': '.\SALAH2017',
-        'HOST': 'PC_N\SALAH2017',
-
-        
-        #'SERVER': 'local\SALAH2017',
-        
-        'PORT': '',
-        #'trusted_connection':'yes',
-        
-        'OPTIONS': {
-            #'DSN': '127.0.0.1',
-            #'SERVER': 'local\SALAH2017',
-
-            'driver': 'ODBC Driver 17 for SQL Server',
-#django-mssql-backend
-            
-            #'unicode_results': True,
-            'MARS_Connection': True, #*** SALAH 
-            #'host_is_server': True, 
-            
-        },
-        
-    },
-}
-'''
-
-
 
 
 # Password validation

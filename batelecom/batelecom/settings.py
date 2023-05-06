@@ -31,9 +31,10 @@ DEBUG = 'RENDER' not in os.environ
 
 ALLOWED_HOSTS = []
 #@dpg-chaparrhp8u0165adn7g-a.oregon-postgres.render.com:5432
+#dpg-chaparrhp8u0165adn7g-a
 #RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 
-RENDER_EXTERNAL_HOSTNAME = os.environ.get('@dpg-chaparrhp8u0165adn7g-a.oregon-postgres.render.com:5432')
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('dpg-chaparrhp8u0165adn7g-a.oregon-postgres.render.com:5432')
 if RENDER_EXTERNAL_HOSTNAME:
     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 

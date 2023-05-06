@@ -2,4 +2,3 @@ Django==3.0.14
 django-mssql-backend==2.8.1
 pyodbc==4.0.39
 requests
-pip install requests

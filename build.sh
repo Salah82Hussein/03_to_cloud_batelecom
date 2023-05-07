@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#!/usr/bin/python
 # exit on error
 set -o errexit
 

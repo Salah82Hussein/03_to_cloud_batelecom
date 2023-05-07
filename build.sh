@@ -4,9 +4,9 @@ set -o errexit
 
 poetry install
 
-cd /batelecom/
+cd batelecom/
 
 python manage.py collectstatic --no-input
 python manage.py migrate
 
-cd /03_to_cloud_batelecom /
+cd 03_to_cloud_batelecom /
